@@ -1,0 +1,7 @@
+<h1>Hello World</h1>
+{% for task in tasks %}
+<h3>{{task.title}}</h3>
+<a href="{% url 'taskDetail' task.id %}">Voir plus</a>
+{% empty %}
+<h3>Aucune tâche</h3>
+{% endfor %}
