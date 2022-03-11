@@ -1,7 +1,9 @@
-<h1>Hello World</h1>
+<h1>Bienvenue {{request.user}} !</h1>
+<a href="{% url 'logout' %}">Se déconnecter</a>
 {% for task in tasks %}
 <h3>{{task.title}}</h3>
 <a href="{% url 'taskDetail' task.id %}">Voir plus</a>
+<a href="{% url 'task-edit' task.id %}">Modifier</a>
 {% empty %}
 <h3>Aucune tâche</h3>
 {% endfor %}
