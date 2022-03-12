@@ -1,6 +1,6 @@
 # django-todo
 
-A basic interface that simulate a TodoList experience, using Python and Django.
+A basic interface that simulates a TodoList experience, using Python and Django.
 This is my first step into backend stuff.
 
 The goal is to have a login/logout/register system that shows content only to those who are authenticated,
