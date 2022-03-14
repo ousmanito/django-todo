@@ -1,4 +1,8 @@
+{% extends 'base/main.html' %}
+
+{% block content %}
 <h1>{{task.title}}</h1>
 <h2>{{task.details}}</h2>
 <h2>{{task.date}}</h2>
 <h2>{{task.completed}}</h2>
+{% endblock content %}

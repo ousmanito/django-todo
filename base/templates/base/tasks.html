@@ -1,32 +1,7 @@
-<style>
-    body {
-        width: 50%;
-        margin: auto auto;
+{% extends 'base/main.html' %}
 
-    }
-    
+{% block content %}
 
-    .task-container span  {
-        width: 100%;
-      display: grid;
-      grid-template-columns: auto 60% auto auto auto;
-
-  }
-
-  .task-container a {
-      align-self: center;
-      justify-self: end;
-  }
-    
-  .task-container p {
-      place-self: center;
-      cursor: pointer;
-  }
-
-  h3 {
-      width: fit-content;
-  }
-</style>
 
 
 <header>
@@ -36,7 +11,10 @@
 
 
 <hr>
+
 <a href="{% url 'new-task' %}">Créer une nouvelle tâche</a>
+
+
 <hr>
 
 {% for task in tasks %}
@@ -58,3 +36,5 @@
 <h3>Aucune tâche</h3>
 {% endfor %}
 </body>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django Todo App</title>
+  </head>
+  <nav class="home-nav">
+    <div class="nav-container">
+        <ul>
+            {% load static %}
+            <li><img src="{% static 'base/homework.png' %}" alt=""></li>
+            <li><a href="{% url 'login' %}">Connexion</a></li>
+            <li><a href="{% url 'register' %}">Créer un compte</a></li>
+        </ul>
+    </div>
+</nav>
+  <body>
+    <div class="container">
+        {% block content %} 
+        {% endblock content %}
+    </div>
+  </body>
+  <footer>
+    <div>
+      <p>Site réalisé par @ousmanito </p>
+    </div>
+  </footer>
+</html>

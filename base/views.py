@@ -13,6 +13,11 @@ from django.contrib.auth.forms import UserCreationForm
 
 from .models import Task
 
+
+class HomeTodo(generic.base.TemplateView):
+    template_name = 'base/home-todo.html'
+
+
 class Tasks(LoginRequiredMixin,
 generic.ListView):
     model = Task
