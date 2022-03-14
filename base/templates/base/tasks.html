@@ -9,7 +9,7 @@
     .task-container span  {
         width: 100%;
       display: grid;
-      grid-template-columns: auto 60% auto auto;
+      grid-template-columns: auto 60% auto auto auto;
 
   }
 
@@ -50,6 +50,8 @@
     <h3>{{task.title}} - {{task.date}}</h3>
     <a href="{% url 'taskDetail' task.id %}">Voir plus</a>
     <a href="{% url 'task-edit' task.id %}">Modifier</a>
+    <a href="{% url 'task-delete' task.id %}">Supprimer</a>
+
 </div>
 
 {% empty %}

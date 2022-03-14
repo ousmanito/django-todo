@@ -1,0 +1,6 @@
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <p>Êtes vous sur de vouloir supprimer la tâche : {{task.title}} ?</p>
+    <input type="submit" value="Confirmer la suppression">
+</form>

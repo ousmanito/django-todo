@@ -42,7 +42,7 @@ class TodoLogin(views.LoginView):
 
 class TaskEdit(LoginRequiredMixin, generic.edit.UpdateView):
     model = Task
-    fields = '__all__'
+    fields = ['title', 'details', 'completed']
     template_name = 'base/task-edit.html'
     context__object_name = 'task-edit'
     success_url = reverse_lazy('task')
@@ -50,9 +50,20 @@ class TaskEdit(LoginRequiredMixin, generic.edit.UpdateView):
 
 class NewTask(LoginRequiredMixin, generic.edit.CreateView):
     model = Task
-    fields = '__all__'
+    fields = ['title', 'details', 'completed']
     context_object_name = 'new-task'
     template_name = 'base/new-task.html'
+    success_url = reverse_lazy('task')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+
+
+class TaskDelete(LoginRequiredMixin, generic.edit.DeleteView):
+    model = Task
+    template_name = 'base/task-delete.html'
     success_url = reverse_lazy('task')
 
 
@@ -61,6 +72,8 @@ class TodoRegister(generic.edit.FormView):
     fields = '__all__'
     template_name = 'base/register.html'
     success_url = reverse_lazy('task')
+
+
     def form_valid(self, form):   
             user = form.save()
             if user is not None:
