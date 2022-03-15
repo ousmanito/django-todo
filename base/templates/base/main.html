@@ -5,26 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Django Todo App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'base/main.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <nav class="home-nav">
     <div class="nav-container">
-        <ul>
-            {% load static %}
-            <li><img src="{% static 'base/homework.png' %}" alt=""></li>
-            <li><a href="{% url 'login' %}">Connexion</a></li>
-            <li><a href="{% url 'register' %}">Créer un compte</a></li>
-        </ul>
+      <ul>
+        {% load static %}
+        <li>
+          <img
+            class="todo-logo"
+            src="{% static 'base/homework.png' %}"
+            alt=""
+          />
+        </li>
+        <li><a href="{% url 'login' %}">Connexion</a></li>
+        <li><a href="{% url 'register' %}">Créer un compte</a></li>
+      </ul>
     </div>
-</nav>
+  </nav>
+  <hr style="z-index: 5" />
+  {% load static %}
+  <img src="{% static 'base/todo-background.jpg' %}" class="todo-bg" alt="" />
   <body>
-    <div class="container">
-        {% block content %} 
-        {% endblock content %}
-    </div>
+    <div class="container">{% block content %} {% endblock content %}</div>
   </body>
   <footer>
     <div>
-      <p>Site réalisé par @ousmanito </p>
+      <p>Site réalisé par @ousmanito</p>
     </div>
   </footer>
 </html>
