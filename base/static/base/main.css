@@ -1,9 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-}
-
-.nav-container {
+  overflow: hidden;
 }
 
 .todo-bg {
@@ -39,17 +37,56 @@
   grid-template-rows: auto auto auto auto;
   grid-template-columns: 1fr 1fr;
 }
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  font-family: "Playfair Display", serif;
+  text-decoration: none;
+  color: black;
+}
+
 .home-container h1,
-h2 {
+h3 {
   grid-column: 1/3;
   justify-self: center;
   text-align: center;
   padding: 2%;
 }
 
-h1,h2,h3,h4,p,a {
-  font-family: 'Playfair Display', serif;
+.home-container h1 {
+  font-weight: 500;
+  font-size: 3.5rem;
+  font-style: italic;
 }
+
+.home-container h3 {
+  font-weight: 400;
+}
+
+.home-container a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+}
+.home-container button {
+  width: 30%;
+  height: 3rem;
+  background-color: rgb(193, 198, 241);
+  border-radius: 7%;
+}
+.home-btn-1 {
+  margin-left: 60%;
+}
+
+
+.home-btn-2 {
+  margin-left: 10%;
+}
+
 
 footer {
   position: fixed;
@@ -57,4 +94,12 @@ footer {
   height: 5%;
   background-color: rgb(236, 236, 236);
   width: 100%;
+  display: grid;
+}
+footer p {
+  justify-self: end;
+  align-self: center;
+  padding-right: 3%;
+  font-weight: bolder;
+
 }
