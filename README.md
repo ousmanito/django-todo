@@ -6,7 +6,7 @@ and to have also task management options : completed, date, name, details, categ
 
 This is my first step into backend stuff.
 
-Here is a screenshot of the landing page, it's not done yet
+Here is a screenshot of the main page, it's not done yet
 
 ![task page](https://user-images.githubusercontent.com/96242923/158603447-acabd483-9b24-48ea-a168-e75bacd2720f.PNG)
 
