@@ -3,23 +3,17 @@
 {% block content %}
 
 
-
-<header>
-  <h1>Bienvenue {{request.user}} !</h1>
-  <a href="{% url 'logout' %}">Se déconnecter</a>
-</header>
-
-
-<hr>
+<div class="tasks-grid-container">
+  <div class="tasks-container">
+<h1>Bienvenue,</h1>
+<h1>{{request.user}}</h1>
 
 <a href="{% url 'new-task' %}">Créer une nouvelle tâche</a>
 
-
 <hr>
 
-{% for task in tasks %}
-<body>
-<div class="task-container">
+<div class="task-list">
+  {% for task in tasks %}
     {% if task.completed %}
     <span><p>&#9745;</p>
     {% else %}
@@ -30,11 +24,13 @@
     <a href="{% url 'task-edit' task.id %}">Modifier</a>
     <a href="{% url 'task-delete' task.id %}">Supprimer</a>
 
-</div>
+    {% empty %}
+    <h3>Aucune tâche</h3>
+    {% endfor %}
+  </div>
 
-{% empty %}
-<h3>Aucune tâche</h3>
-{% endfor %}
-</body>
+
+  </div>
+</div>
 
 {% endblock content %}

@@ -1,15 +1,36 @@
 * {
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 
-.todo-bg {
-  position: absolute;
-  bottom: -10%;
-  width: 75%;
-  margin-left: 12.5%;
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  font-family: "Playfair Display", serif;
+  text-decoration: none;
+  color: black;
 }
+
+footer {
+  position: fixed;
+  height: 3%;
+  bottom: 0;
+  background-color: rgb(236, 236, 236);
+  width: 100%;
+  display: grid;
+}
+footer p {
+  justify-self: end;
+  align-self: center;
+  padding-right: 3%;
+  font-weight: bolder;
+}
+
+/* Navigation Bar */
+
 .nav-container ul {
   display: grid;
   grid-template-columns: 80% auto auto;
@@ -25,7 +46,17 @@
   padding-left: 3%;
 }
 
-.grid-container {
+/* Home Page */
+
+.todo-bg {
+  position: absolute;
+  bottom: -10%;
+  width: 75%;
+  margin-left: 12.5%;
+  overflow: hidden;
+}
+
+.home-grid-container {
   position: absolute;
   top: 25%;
   left: 50%;
@@ -38,19 +69,8 @@
   grid-template-columns: 1fr 1fr;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-a {
-  font-family: "Playfair Display", serif;
-  text-decoration: none;
-  color: black;
-}
-
 .home-container h1,
-h3 {
+.home-container h3 {
   grid-column: 1/3;
   justify-self: center;
   text-align: center;
@@ -70,36 +90,29 @@ h3 {
 .home-container a {
   text-decoration: none;
   font-size: 1rem;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .home-container button {
   width: 30%;
   height: 3rem;
-  background-color: rgb(193, 198, 241);
+  background-color: rgb(255, 255, 255);
   border-radius: 7%;
 }
 .home-btn-1 {
   margin-left: 60%;
 }
 
-
 .home-btn-2 {
   margin-left: 10%;
 }
 
+/* Tasks Page */
 
-footer {
-  position: fixed;
-  bottom: 0;
-  height: 5%;
-  background-color: rgb(236, 236, 236);
-  width: 100%;
+.tasks-grid-container {
+  position: absolute;
+  top: 20%;
   display: grid;
-}
-footer p {
-  justify-self: end;
-  align-self: center;
-  padding-right: 3%;
-  font-weight: bolder;
-
+  height: 100%;
+  width: 50%;
+  margin-left: 25%;
 }

@@ -17,20 +17,35 @@
       <ul>
         {% load static %}
         <li>
+          <a href="{% url 'home-todo' %}">
           <img
-            class="todo-logo"
-            src="{% static 'base/homework.png' %}"
-            alt=""
+          class="todo-logo"
+          src="{% static 'base/homework.png' %}"
+          alt=""
           />
+        </a>
         </li>
+
+        {% if request.user.is_authenticated == False %}
         <li><a href="{% url 'login' %}">Connexion</a></li>
+        {% else %}
+        <li><a href="{% url 'task' %}">Tâches</a></li>
+        {% endif %}
+        {% if request.user.is_authenticated == False %}
         <li><a href="{% url 'register' %}">Créer un compte</a></li>
+        {% else %}
+        <li><a href="{% url 'logout' %}">Déconnexion</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>
-  <hr style="z-index: 5" />
+  <hr/>
+  {% if request.path == '/' %}
   {% load static %}
   <img src="{% static 'base/todo-background.jpg' %}" class="todo-bg" alt="" />
+  {% endif %}
+
+
   <body>
     <div class="container">{% block content %} {% endblock content %}</div>
   </body>
