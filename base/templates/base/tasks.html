@@ -1,35 +1,68 @@
-{% extends 'base/main.html' %}
-
-{% block content %}
-
+{% extends 'base/main.html' %} {% block content %}
 
 <div class="tasks-grid-container">
   <div class="tasks-container">
-<h1>Bienvenue,</h1>
-<h1>{{request.user}}</h1>
+    <h1 style="font-size: 3.25rem;">Bienvenue,</h1>
+    <h1 style="padding-bottom: 3%; font-size: 3.25rem; font-style: italic; font-weight: 500;" >{{request.user}}</h1>
+    {% load static %}
 
-<a href="{% url 'new-task' %}">Créer une nouvelle tâche</a>
+    <a
+      style="display: flex; align-items: center;"
+      href="{% url 'new-task' %}"
+      style="padding-bottom: 3%"
+      ><img
+        src="{% static 'base/add.png' %}"
+        alt=""
+        style="height: 20px; width: 20px"
+      />
+      <h3 style="font-weight: 500; padding-left: 2%;">Créer une nouvelle tâche</h3></a
+    >
 
-<hr>
+    <div
+      style="
+        height: 1.618px;
+        width: 61.8%;
+        background-color: rgb(173, 173, 173);
+        margin-top: 2%;
+      "
+    ></div>
 
-<div class="task-list">
-  {% for task in tasks %}
-    {% if task.completed %}
-    <span><p>&#9745;</p>
-    {% else %}
-    <span><p>&#9744;</p>
-    {% endif %}
-    <h3>{{task.title}} - {{task.date}}</h3>
-    <a href="{% url 'taskDetail' task.id %}">Voir plus</a>
-    <a href="{% url 'task-edit' task.id %}">Modifier</a>
-    <a href="{% url 'task-delete' task.id %}">Supprimer</a>
+    <div class="task-list" style="padding-top: 3%">
+      {% for task in tasks %}
+      <div class="task-item-container">
+        <div class="task-item">
+          {% if task.completed %}
+          <div class="task-done"></div>
+          {% else %}
+          <div class="task-still"></div>
+          {% endif %}
+          <h3>{{task.title}} - {{task.date}}</h3>
+          {% load static %}
+          <a href="{% url 'taskDetail' task.id %}"
+            ><img
+              src="{% static 'base/more.png' %}"
+              style="width: 25px; height: 25px"
+              alt=""
+          /></a>
+          <a href="{% url 'task-edit' task.id %}"
+            ><img
+              src="{% static 'base/editing.png' %}"
+              style="width: 20px; height: 20px"
+              alt=""
+          /></a>
+          <a href="{% url 'task-delete' task.id %}"
+            ><img
+              src="{% static 'base/delete.png' %}"
+              style="width: 17px; height: 17px"
+              alt=""
+          /></a>
+        </div>
+      </div>
 
-    {% empty %}
-    <h3>Aucune tâche</h3>
-    {% endfor %}
-  </div>
-
-
+      {% empty %}
+      <h3>Aucune tâche</h3>
+      {% endfor %}
+    </div>
   </div>
 </div>
 
