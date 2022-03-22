@@ -1,12 +1,69 @@
 {% extends 'base/main.html' %}
 
 {% block content %}
-<h1>Connexion</h1>
-<form method="POST" >
+
+<style>
+    .form-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+    }
+    .form-box {
+        width: 40vw;
+        padding: 25px;
+        border: 1px solid rgb(158, 157, 155);
+        border-radius: 10px;
+    }
+  
+    label {
+      display: block;
+      padding: 10px 5px 0 0;
+    }
+    input[type=password], input[type=text], textarea {
+        border: 1px solid grey;
+        border-radius: 4px;
+        padding: 10px;
+    }
+    .button {
+  padding: 7px;
+  background-color: rgb(224, 224, 224);
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid grey;
+}
+
+.button:hover {
+    background-color: rgb(199, 199, 199);
+  transition: 0.4s ease-in-out;
+}
+  </style>
+
+<div class="form-container">
+    <div class="form-box">
+
+    <h1 style="padding-bottom: 35px;">Connexion</h1>
+    <hr>
+<form method="POST" style="padding-bottom: 30px;" >
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Se connecter">
+    {{ form.non_field_errors }}
+    <div class="form-item">
+      {{ form.username.errors }}
+      <label for="{{ form.username.id_for_label }}"><h3>Nom d'utilisateur :</h3></label>
+      {{ form.username }}
+    </div>
+
+    <div class="form-item" style="padding-bottom: 35px;">
+      {{ form.password.errors }}
+      <label for="{{ form.password.id_for_label }}"><h3>Mot de passe :</h3></label>
+      {{ form.password }}
+    </div> 
+       <input class="button" type="submit" value="Let's go !">
 </form>
 <hr>
-<a href="{% url 'register' %}">Créer un compte</a>
+<h4 style="padding-top: 35px;">Pas encore de compte ? <a href="{% url 'register' %}"> <u>Inscivez vous !</u></a></h4>
+</div>
+</div>
+
 {% endblock content %}

@@ -29,8 +29,9 @@ footer p {
   font-weight: bolder;
 }
 html {
-  background-color: rgb(218, 218, 218);
+  background-color: rgb(255, 255, 255);
 }
+
 
 /* Navigation Bar */
 
@@ -96,10 +97,15 @@ html {
   color: rgb(0, 0, 0);
 }
 .home-container button {
-  width: 30%;
+  width: 120px;
   height: 3rem;
   background-color: rgb(255, 255, 255);
-  border-radius: 7%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.home-container button:hover {
+  background-color: rgb(224, 224, 224);
+  transition: 0.4s ease-in-out;
 }
 .home-btn-1 {
   margin-left: 60%;

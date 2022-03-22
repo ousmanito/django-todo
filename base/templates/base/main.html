@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="{% static 'base/main.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <nav class="home-nav">
@@ -18,38 +21,41 @@
         {% load static %}
         <li>
           <a href="{% url 'home-todo' %}">
-          <img
-          class="todo-logo"
-          src="{% static 'base/homework.png' %}"
-          alt=""
-          />
-        </a>
+            <img
+              class="todo-logo"
+              src="{% static 'base/homework.png' %}"
+              alt=""
+            />
+          </a>
         </li>
 
         {% if request.user.is_authenticated == False %}
         <li><a href="{% url 'login' %}">Connexion</a></li>
         {% else %}
         <li><a href="{% url 'task' %}">Tâches</a></li>
-        {% endif %}
-        {% if request.user.is_authenticated == False %}
+
+         {% endif %} {% if request.user.is_authenticated == False %}
         <li><a href="{% url 'register' %}">Créer un compte</a></li>
         {% else %}
-        <li><a href="{% url 'logout' %}">Déconnexion</a></li>
+        <li>
+          <a href="{% url 'logout' %}">Déconnexion</a>
+        </li>
         {% endif %}
       </ul>
     </div>
   </nav>
-  <hr/>
-  {% if request.path == '/' %}
-  {% load static %}
+  <hr />
+  {% if request.path == '/' %} {% load static %}
   <img src="{% static 'base/todo-background.jpg' %}" class="todo-bg" alt="" />
   {% endif %}
 
-
   <body>
-    <div class="container">{% block content %} {% endblock content %}</div>
+    <div class="container">
+      {% block content %} 
+      {% endblock content %}
+    </div>
   </body>
   <footer>
-      <p>Site réalisé par @ousmanito</p>
+    <p>Site réalisé par @ousmanito</p>
   </footer>
 </html>

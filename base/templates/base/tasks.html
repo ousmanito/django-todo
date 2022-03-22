@@ -7,7 +7,7 @@
     {% load static %}
 
     <a
-      style="display: flex; align-items: center;"
+      style="display: flex; align-items: center;  width: 35%;"
       href="{% url 'new-task' %}"
       style="padding-bottom: 3%"
       ><img
@@ -15,8 +15,7 @@
         alt=""
         style="height: 20px; width: 20px"
       />
-      <h3 style="font-weight: 500; padding-left: 2%;">Créer une nouvelle tâche</h3></a
-    >
+      <h3 style="font-weight: 500; padding-left: 2%;">Créer une nouvelle tâche</h3></a>
 
     <div
       style="
@@ -60,7 +59,7 @@
       </div>
 
       {% empty %}
-      <h3>Aucune tâche</h3>
+      <h3>Aucune tâche, qu'attendez-vous pour en ajouter une ?</h3>
       {% endfor %}
     </div>
   </div>

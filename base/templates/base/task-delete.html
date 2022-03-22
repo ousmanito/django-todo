@@ -1,10 +1,41 @@
-{% extends 'base/main.html' %}
+{% extends 'base/main.html' %} {% block content %}
+<style>
+  .form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
+  .form-box {
+    width: 40vw;
+    padding: 25px;
+    border: 1px solid rgb(158, 157, 155);
+    border-radius: 10px;
+  }
+  .button {
+    padding: 7px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid grey;
+  }
 
-{% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <p>Êtes vous sur de vouloir supprimer la tâche : {{task.title}} ?</p>
-    <input type="submit" value="Confirmer la suppression">
-</form>
+  .button:hover {
+    background-color: rgb(199, 199, 199);
+    transition: 0.4s ease-in-out;
+  }
+</style>
+
+<div class="form-container">
+  <div class="form-box">
+    <form method="POST">
+      {% csrf_token %} {{form.as_p}}
+      <h2 style="padding-bottom: 30px">
+        Êtes vous sur de vouloir supprimer la tâche : {{task.title}} ?
+      </h2>
+      <input class="button" type="submit" value="Confirmer la suppression" />
+    </form>
+  </div>
+</div>
 {% endblock content %}
