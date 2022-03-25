@@ -1,63 +1,99 @@
-{% extends 'base/main.html' %} {% block content %}
-
+{% extends 'base/main.html' %} 
+{% block content %} 
+{% load bootstrap4 %} 
+{% bootstrap_javascript jquery='full' %} 
+{{ form.media }}
 <style>
-    .form-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 10px;
-    }
-    .form-box {
-        width: 40vw;
-        padding: 25px;
-        border: 1px solid rgb(158, 157, 155);
-        border-radius: 10px;
-    }
-  
-    label {
-      display: block;
-      padding: 10px 5px 0 0;
-    }
-    input[type=password], input[type=text], textarea {
-        border: 1px solid grey;
-        border-radius: 4px;
-        padding: 10px;
-    }
-    .button {
-  padding: 7px;
-  background-color: rgb(224, 224, 224);
-  border-radius: 5px;
-  cursor: pointer;
-  border: 1px solid grey;
-}
+  textarea {
+    resize: none;
+  }
 
-.button:hover {
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    max-width: 80%;
+  }
+
+  .form-item ::placeholder {
+    opacity: 0;
+  }
+
+  .form-item label {
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+
+  .date {
+    display: flex;
+    align-items: center;
+    max-width: 70%;
+  }
+  .form-item i {
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid grey;
+    background-color: rgb(236, 236, 236);
+    border-radius: 5px;
+  }
+
+  .form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
+  .form-box {
+    height: 30%;
+    width: 40vw;
+    padding: 25px;
+    border: 1px solid rgb(158, 157, 155);
+    border-radius: 10px;
+  }
+
+  label {
+    display: block;
+    padding: 10px 5px 0 0;
+  }
+  input[type="password"],
+  input[type="text"],
+  textarea {
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  .button {
+    padding: 7px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid grey;
+  }
+
+  .button:hover {
     background-color: rgb(199, 199, 199);
-  transition: 0.4s ease-in-out;
-}
+    transition: 0.4s ease-in-out;
+  }
 </style>
 <div class="form-container">
-    <div class="form-box">
-        <h1 style="padding-bottom: 35px;">Nouvelle tâche </h1>
-    <hr>
-  <form method="POST">
-    {% csrf_token %} {{ form.non_field_errors }}
-    <div class="form-item">
-      {{ form.title.errors }}
-      <label for="{{ form.title.id_for_label }}"><h3>Tâche :</h3></label>
-      {{ form.title }}
+  <div class="form-box">
+    <h1 style="padding-bottom: 35px">Nouvelle tâche</h1>
+    <hr />
+    <div class="form-item" style="padding-bottom: 30px">
+      <form method="POST">
+        {% csrf_token %} {% bootstrap_form form %} {% buttons %}
+        <input
+          class="button"
+          type="submit"
+          value="Créer une tâche"
+          style="margin-top: 30px"
+        />
+        {% endbuttons %}
+      </form>
     </div>
-
-    <div class="form-item" style="padding-bottom: 30px;">
-      {{ form.details.errors }}
-      <label for="{{ form.details.id_for_label }}"><h3>Description :</h3></label>
-      {{ form.details }}
-    </div>
-
-    <input class="button" type="submit" value="Créer une tâche" />
-  </form>
-</div>
+  </div>
 </div>
 
 {% endblock content %}

@@ -10,8 +10,10 @@ from django.http import HttpResponse
 from django.contrib.auth import views, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
-
 from .models import Task
+from bootstrap_datepicker_plus.widgets import DateTimePickerInput
+
+
 
 
 class HomeTodo(generic.base.TemplateView):
@@ -55,10 +57,15 @@ class TaskEdit(LoginRequiredMixin, generic.edit.UpdateView):
 
 class NewTask(LoginRequiredMixin, generic.edit.CreateView):
     model = Task
-    fields = ['title', 'details', 'completed']
+    fields = ['title', 'details','date']
     context_object_name = 'new-task'
     template_name = 'base/new-task.html'
     success_url = reverse_lazy('task')
+
+    def get_form(self):
+        form = super().get_form()
+        form.fields['date'].widget = DateTimePickerInput(format='%d/%m/%Y')
+        return form
 
     def form_valid(self, form):
         form.instance.user = self.request.user

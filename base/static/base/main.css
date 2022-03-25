@@ -33,6 +33,7 @@ html {
 }
 
 
+
 /* Navigation Bar */
 
 .nav-container ul {
@@ -150,7 +151,7 @@ html {
 }
 
 .task-still {
-  border: 3px solid rgb(238, 141, 178);
+  border: 3px solid rgb(104, 98, 100);
 
 }
 
