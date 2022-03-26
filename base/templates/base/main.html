@@ -30,15 +30,14 @@
         </li>
 
         {% if request.user.is_authenticated == False %}
-        <li><a href="{% url 'login' %}">Connexion</a></li>
+        <li style="grid-column:3/4"><a class="nav-text" href="{% url 'login' %}">Connexion</a></li>
         {% else %}
-        <li><a href="{% url 'task' %}">Tâches</a></li>
+        <li><a class="nav-text" href="{% url 'task' %}">Tâches</a></li>
 
-         {% endif %} {% if request.user.is_authenticated == False %}
-        <li><a href="{% url 'register' %}">Créer un compte</a></li>
-        {% else %}
+         {% endif %} 
+         {% if request.user.is_authenticated == True %}
         <li>
-          <a href="{% url 'logout' %}">Déconnexion</a>
+          <a class="nav-text" href="{% url 'logout' %}">Déconnexion</a>
         </li>
         {% endif %}
       </ul>

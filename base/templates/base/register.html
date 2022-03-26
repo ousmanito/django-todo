@@ -62,7 +62,7 @@
         {{ form.password1 }}
       </div>
 
-      <div class="form-item" style="padding-bottom: 35px">
+      <div class="form-item" style="padding-bottom: 20px">
         {{ form.password2.errors }}
         <label for="{{ form.password2.id_for_label }}"
           ><h3>Confirmer le mot de passe :</h3></label
@@ -71,6 +71,8 @@
       </div>
       <input class="button" type="submit" value="Valider" />
     </form>
+    <hr style="margin-top: 35px">
+<h4 style="padding-top: 25px;">Déjà un compte ? <a href="{% url 'login' %}"> <u>Connectez vous !</u></a></h4>
   </div>
 </div>
 {% endblock content %}

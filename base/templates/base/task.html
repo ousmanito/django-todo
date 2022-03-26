@@ -1,8 +1,39 @@
-{% extends 'base/main.html' %}
+{% extends 'base/main.html' %} {% block content %}
 
-{% block content %}
-<h1>{{task.title}}</h1>
-<h2>{{task.details}}</h2>
-<h2>{{task.date}}</h2>
-<h2>{{task.completed}}</h2>
+<style>
+    .task-details {
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 15%;
+        border: 1px solid grey;
+        border-radius: 7px;
+        padding: 2%;
+    }
+    .task-details h1, h2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .task-details h2 {
+        font-weight: 300;
+        padding: 2% 0;
+    }
+    @media screen and (max-width: 800px) {
+    .task-details {
+      width: 85%;
+      margin-left:5.5% ;
+      border: 0;
+    }
+    
+  }
+
+</style>
+<div class="task-details">
+    <h1 style="padding-bottom: 30px;">Description</h1>
+    <hr>
+  <h2 style="padding-top: 30px;">Titre : {{task.title}}</h1>
+  <h2> Description : {{task.details}}</h2>
+  <h2> Date d'échéance : {{task.date|date:"d M, Y"}}</h2>
+</div>
 {% endblock content %}

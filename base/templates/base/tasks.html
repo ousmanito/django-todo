@@ -2,57 +2,39 @@
 
 <div class="tasks-grid-container">
   <div class="tasks-container">
-    <h1 style="font-size: 3.25rem;">Bienvenue,</h1>
-    <h1 style="padding-bottom: 3%; font-size: 3.25rem; font-style: italic; font-weight: 500;" >{{request.user}}</h1>
+    <h1 class="task-title">Bienvenue,</h1>
+    <h1 class='task-username' >{{request.user}}</h1>
     {% load static %}
 
-    <a
-      style="display: flex; align-items: center;  width: 35%;"
-      href="{% url 'new-task' %}"
-      style="padding-bottom: 3%"
+    <a class="task-add" href="{% url 'new-task' %}"
       ><img
         src="{% static 'base/add.png' %}"
         alt=""
-        style="height: 20px; width: 20px"
       />
-      <h3 style="font-weight: 500; padding-left: 2%;">Créer une nouvelle tâche</h3></a>
+      <h3 class="task-add-text">Créer une nouvelle tâche</h3></a>
 
     <div
       style="
         height: 1.618px;
-        width: 61.8%;
-        background-color: rgb(173, 173, 173);
-        margin-top: 2%;
-      "
+        width: 75%;
+        background-color: rgb(173, 173, 173);"
     ></div>
 
     <div class="task-list" style="padding-top: 3%">
       {% for task in tasks %}
       <div class="task-item-container">
         <div class="task-item">
-          {% if task.completed %}
-          <div class="task-done"></div>
-          {% else %}
-          <div class="task-still"></div>
-          {% endif %}
-          <h3>{{task.title}} - {{task.date}}</h3>
+          <a href="{% url 'task-delete' task.id %}"><div class="task-still"></div></a>
+          <h3>{{task.title}} - {{task.date|date:"d M, Y"}}</h3>
           {% load static %}
           <a href="{% url 'taskDetail' task.id %}"
             ><img
               src="{% static 'base/more.png' %}"
-              style="width: 25px; height: 25px"
               alt=""
           /></a>
           <a href="{% url 'task-edit' task.id %}"
             ><img
               src="{% static 'base/editing.png' %}"
-              style="width: 20px; height: 20px"
-              alt=""
-          /></a>
-          <a href="{% url 'task-delete' task.id %}"
-            ><img
-              src="{% static 'base/delete.png' %}"
-              style="width: 17px; height: 17px"
               alt=""
           /></a>
         </div>

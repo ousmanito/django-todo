@@ -1,17 +1,29 @@
-{% extends 'base/main.html' %} 
-{% block content %}
+{% extends 'base/main.html' %} {% block content %}
 <div class="home-grid-container">
   <div class="home-container">
     <h1>Django toDoList</h1>
     <h3>
-      Un gestionnaire de tâches des plus basiques, écris avec le framework Python Django
+      Un gestionnaire de tâches des plus basiques, écris avec le framework
+      Python Django
     </h3>
     <h3>
-      Planifiez et gêrer l'ensemble de vos tâches en moins de deux, inscrivez-vous pour démarrer !
+      Planifiez et gêrer l'ensemble de vos tâches en moins de deux,
+      inscrivez-vous pour démarrer !
     </h3>
-
-    <button class='home-btn-1' type="button"><a href="{% url 'login' %}">Lancez-vous !</a></button>
-    <button class="home-btn-2" type="button"><a href="">En savoir plus</a></button>
+    <div class="home-button-container">
+      <span class="home-btn-1">
+      <button type="button">
+        <a href="{% url 'login' %}">Lancez-vous !</a>
+      </button>
+    </span>
+    <span class="home-btn-2">
+      <button class="home-btn-2" type="button">
+        <a href="https://github.com/ousmanito/django-todo" target="_blank"
+          >En savoir plus</a
+        >
+      </button>
+    </span>
+    </div>
   </div>
 </div>
 {% endblock content %}
