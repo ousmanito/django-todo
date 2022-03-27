@@ -1,6 +1,5 @@
 from audioop import add
 from email.policy import default
-from tkinter import CASCADE
 from typing import Text
 from urllib import request
 from django.conf import settings
