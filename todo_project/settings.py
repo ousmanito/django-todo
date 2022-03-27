@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-+%_fo&+ca4u$hly*_nye+b=cwmn+3(mr*)1w5b6oxuq5g%*9n4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-toudouliste.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -76,13 +78,22 @@ WSGI_APPLICATION = 'todo_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+  'default' : {
+      'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+      'NAME' : 'dcar87i9h37v4f',
+      'USER' : 'awiqdufpntthlr',
+      'PASSWORD' : '0ab438430058980956e9cf194aa3012d40a347b93b84fabad2256293f36bc1c1',
+      'HOST' : 'ec2-52-212-228-71.eu-west-1.compute.amazonaws.com',
+      'PORT' : '5432',
+  }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -118,7 +129,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'base/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+django_heroku.settings(locals())
 
 
 LOGIN_URL = 'login/'
