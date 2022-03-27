@@ -79,8 +79,12 @@
 
   @media screen and (max-width: 800px) {
     .form-box {
-      width: 85vw;
+      width: 80vw;
       border: 0;
+    }
+    .date {
+      max-width: 100%;
+      padding-bottom: 5px;
     }
     
   }
@@ -91,7 +95,9 @@
     <hr />
     <div class="form-item" style="padding-bottom: 30px">
       <form method="POST">
-        {% csrf_token %} {% bootstrap_form form %} {% buttons %}
+        {% csrf_token %} 
+        {% bootstrap_form form %} 
+        {% buttons %}
         <input
           class="button"
           type="submit"
