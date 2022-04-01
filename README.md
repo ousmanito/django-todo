@@ -1,7 +1,12 @@
-# Django toDoList - CRUD exercice
+# Django toDoList - CRUD Project
 
 A basic interface that simulates a TodoList experience, using Python and Django.
 The goal is to have a registration system that shows private content only to those who are authenticated, and there is also some task management options : create, read, update and delete.
+
+
+### Links
+
+- Project URL: https://django-toudouliste.herokuapp.com/
 
 ## Screenshot of the Home page
 
@@ -32,9 +37,6 @@ Users should be able to:
 - Easily manages his data
 
 
-### Links
-
-- Solution URL: https://django-toudouliste.herokuapp.com/
 
 ## My process
 
