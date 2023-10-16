@@ -1,4 +1,4 @@
-# Django toDoList - CRUD Project
+# Django CRUD Project
 
 A basic interface that simulates a TodoList experience, using Python and Django.
 The goal is to have a registration system that shows private content only to those who are authenticated, and there is also some task management options : create, read, update and delete.
