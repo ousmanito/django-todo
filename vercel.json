@@ -23,5 +23,6 @@
       "src": "/static/(.*)",
       "dest": "/static/$1"
     }
-  ]
+  ],
+  "outputDirectory": "staticfiles_build"
 }
