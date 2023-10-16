@@ -1,29 +1,32 @@
 {% extends 'base/main.html' %} {% block content %}
 <div class="home-grid-container">
   <div class="home-container">
-    <h1>Django toDoList</h1>
+    <h1>Gérez vos tâches en moins de deux</h1>
     <h3>
-      Un gestionnaire de tâches des plus basiques, écris avec le framework
-      Python Django
-    </h3>
-    <h3>
-      Planifiez et gêrer l'ensemble de vos tâches en moins de deux,
-      inscrivez-vous pour démarrer !
+      Votre outil de gestion de tâches personnelles. Organisez vos journées,
+      suivez vos projets et restez productif comme jamais. Inscrivez-vous pour
+      démarrer !
     </h3>
     <div class="home-button-container">
       <span class="home-btn-1">
-      <button type="button">
-        <a href="{% url 'login' %}">Lancez-vous !</a>
-      </button>
-    </span>
-    <span class="home-btn-2">
-      <button class="home-btn-2" type="button">
-        <a href="https://github.com/ousmanito/django-todo" target="_blank"
-          >En savoir plus</a
-        >
-      </button>
-    </span>
+        <button type="button">
+          <a href="{% url 'login' %}">Lancez-vous !</a>
+        </button>
+      </span>
+      <span class="home-btn-2">
+        <button class="home-btn-2" type="button">
+          <a href="https://github.com/ousmanito/django-todo" target="_blank"
+            >En savoir plus</a
+          >
+        </button>
+      </span>
     </div>
+    {% load static %}
+    <img
+      class="todo-bg"
+      src="{% static 'base/todo-background1.jpg' %}"
+      alt=""
+    />
   </div>
 </div>
 {% endblock content %}

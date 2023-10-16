@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Django Todo App</title>
+    <title>Encore une TodoList</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'base/main.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300&family=IBM+Plex+Sans:wght@300;400&family=Playfair+Display&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -30,12 +30,13 @@
         </li>
 
         {% if request.user.is_authenticated == False %}
-        <li style="grid-column:3/4"><a class="nav-text" href="{% url 'login' %}">Connexion</a></li>
+        <li style="grid-column: 3/4">
+          <a class="nav-text" href="{% url 'login' %}">Connexion</a>
+        </li>
         {% else %}
         <li><a class="nav-text" href="{% url 'task' %}">Tâches</a></li>
 
-         {% endif %} 
-         {% if request.user.is_authenticated == True %}
+        {% endif %} {% if request.user.is_authenticated == True %}
         <li>
           <a class="nav-text" href="{% url 'logout' %}">Déconnexion</a>
         </li>
@@ -43,18 +44,14 @@
       </ul>
     </div>
   </nav>
-  <hr />
-  {% if request.path == '/' %} {% load static %}
-  <img src="{% static 'base/todo-background.jpg' %}" class="todo-bg" alt="" />
-  {% endif %}
+  <!-- {% if request.path == '/' %} {% load static %} -->
+  <!-- <img src="{% static 'base/todo-background.jpg' %}" class="todo-bg" alt="" /> -->
+  <!-- {% endif %} -->
 
   <body>
-    <div class="container">
-      {% block content %} 
-      {% endblock content %}
-    </div>
+    <div class="container">{% block content %} {% endblock content %}</div>
   </body>
   <footer>
-    <p>Site réalisé par @ousmanito</p>
+    <p>© 2021 Ousmane Bathily. Tout droits réservés</p>
   </footer>
 </html>

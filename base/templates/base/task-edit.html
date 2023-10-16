@@ -2,11 +2,10 @@
 
 <style>
   .form-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
+    margin-top: 1.75rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .form-box {
     width: 40vw;
@@ -18,6 +17,9 @@
   label {
     display: block;
     padding: 10px 5px 0 0;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
   }
   input[type="password"],
   input[type="text"],
@@ -26,17 +28,24 @@
     border-radius: 4px;
     padding: 10px;
     max-width: 80%;
+    font-size: clamp(0.85rem, 3vw, 1.2rem);
+    font-family: "IBM Plex Sans", sans-serif;
+
   }
-  .button {
-    padding: 7px;
-    background-color: rgb(224, 224, 224);
-    border-radius: 5px;
+    .button {
+    padding: clamp(0.35rem, 0.5vw, 0.7rem) clamp(0.65rem, 0.9vw, 0.95rem);
+    background-color: indianred;
+    border-radius: clamp(0.5rem, 0.5vw, 0.75rem);
     cursor: pointer;
-    border: 1px solid grey;
+    border: none;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: whitesmoke;
+
   }
 
   .button:hover {
-    background-color: rgb(199, 199, 199);
+    opacity: 0.8;
     transition: 0.4s ease-in-out;
   }
   @media screen and (max-width: 800px) {
@@ -44,13 +53,12 @@
       width: 85vw;
       border: 0;
     }
-    
   }
 </style>
 
 <div class="form-container">
   <div class="form-box">
-    <h1 style="padding-bottom: 35px">Modifier la tâche</h1>
+    <h1 style="padding-bottom: 1rem">Modifier la tâche</h1>
     <hr />
     <form method="POST">
       {% csrf_token %} {{ form.non_field_errors }}

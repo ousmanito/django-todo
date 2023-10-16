@@ -11,7 +11,7 @@ from django.contrib.auth import views, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from .models import Task
-from bootstrap_datepicker_plus.widgets import DateTimePickerInput
+from bootstrap_datepicker_plus.widgets import DatePickerInput
 
 
 
@@ -64,7 +64,7 @@ class NewTask(LoginRequiredMixin, generic.edit.CreateView):
 
     def get_form(self):
         form = super().get_form()
-        form.fields['date'].widget = DateTimePickerInput(format='%d/%m/%Y')
+        form.fields['date'].widget = DatePickerInput(format='%d/%m/%Y')
         return form
 
     def form_valid(self, form):

@@ -14,20 +14,25 @@
     border-radius: 10px;
   }
   .button {
-    padding: 7px;
-    background-color: rgb(224, 224, 224);
-    border-radius: 5px;
+    padding: clamp(0.35rem, 0.5vw, 0.7rem) clamp(0.65rem, 0.9vw, 0.95rem);
+    background-color: indianred;
+    border-radius: clamp(0.5rem, 0.5vw, 0.75rem);
     cursor: pointer;
-    border: 1px solid grey;
+    border: none;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: whitesmoke;
   }
 
   .button:hover {
-    background-color: rgb(199, 199, 199);
+    opacity: 0.8;
     transition: 0.4s ease-in-out;
   }
+
   @media screen and (max-width: 800px) {
     .form-box {
       width: 85vw;
+      border: none;
     }
     
   }
@@ -37,7 +42,7 @@
   <div class="form-box">
     <form method="POST">
       {% csrf_token %} {{form.as_p}}
-      <h2 style="padding-bottom: 30px">
+      <h2 style="padding-bottom: 30px; font-size: clamp(1.5rem, 4vw, 2rem);">
         Êtes vous sur de vouloir supprimer la tâche : {{task.title}} ?
       </h2>
       <input class="button" type="submit" value="Confirmer la suppression" />
