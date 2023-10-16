@@ -19,8 +19,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env(
     DB_ENGINE = (str, 'django.db.backends.sqlite3'),
-    DB_NAME = (str, BASE_DIR / 'db.sqlite3')
+    DB_NAME = (str, BASE_DIR / 'db.sqlite3'),
+    DB_USER = (str, ''),
+    DB_PASSWORD = (str, ''),
+    DB_HOST = (str, ''),
+    DB_PORT = (str,''),
 )
+
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
@@ -90,7 +95,7 @@ DATABASES = {
         "ENGINE": env('DB_ENGINE'),
         "NAME": env("DB_NAME"),
         "USER": env("DB_USER"),
-        "PASSWORD": os.getenv("DB_PASSWORD"),
+        "PASSWORD": env("DB_PASSWORD"),
         "HOST": env("DB_HOST"),
         "PORT": env("DB_PORT"),
     }
