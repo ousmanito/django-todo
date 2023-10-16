@@ -1,0 +1,14 @@
+-i https://pypi.org/simple
+annotated-types==0.6.0 ; python_version >= '3.8'
+asgiref==3.7.2 ; python_version >= '3.7'
+beautifulsoup4==4.12.2 ; python_full_version >= '3.6.0'
+bootstrap4==0.1.0
+django==4.2.6
+django-bootstrap-datepicker-plus==5.0.4
+django-bootstrap4==23.2
+pydantic==2.4.2 ; python_version >= '3.7'
+pydantic-core==2.10.1 ; python_version >= '3.7'
+soupsieve==2.5 ; python_version >= '3.8'
+sqlparse==0.4.4 ; python_version >= '3.5'
+tk==0.1.0
+typing-extensions==4.8.0 ; python_version >= '3.8'
