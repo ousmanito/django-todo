@@ -18,11 +18,6 @@
     {
       "src": "/(.*)",
       "dest": "todo_project/wsgi.py"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
     }
-  ],
-  "outputDirectory": "staticfiles_build"
+  ]
 }
