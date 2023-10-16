@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'todo_project.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": env('DJANGO_ENGINE'),
+        "ENGINE": env('DB_ENGINE'),
         "NAME": env("DB_NAME"),
         "USER": env("DB_USER"),
         "PASSWORD": os.getenv("DB_PASSWORD"),
