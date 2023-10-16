@@ -7,7 +7,7 @@
     {% load static %}
 
     <a class="task-add" href="{% url 'new-task' %}"
-      ><img src="{% static 'base/add.png' %}" alt="" />
+      ><img src="{% static 'add.png' %}" alt="" />
       <h3 class="task-add-text">Créer une nouvelle tâche</h3></a
     >
 
@@ -22,10 +22,10 @@
           <h3>{{task.title}} - {{task.date|date:"d M, Y"}}</h3>
           {% load static %}
           <a href="{% url 'taskDetail' task.id %}" class='task-detail'
-            ><img src="{% static 'base/more.png' %}"  alt=""
+            ><img src="{% static 'more.png' %}"  alt=""
           /></a>
           <a href="{% url 'task-edit' task.id %}" class='task-edit'
-            ><img src="{% static 'base/editing.png' %}"  alt=""
+            ><img src="{% static 'editing.png' %}"  alt=""
           /></a>
         </div>
       </div>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encore une TodoList</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'base/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +23,7 @@
           <a href="{% url 'home-todo' %}">
             <img
               class="todo-logo"
-              src="{% static 'base/homework.png' %}"
+              src="{% static 'homework.png' %}"
               alt=""
             />
           </a>
@@ -45,7 +45,7 @@
     </div>
   </nav>
   <!-- {% if request.path == '/' %} {% load static %} -->
-  <!-- <img src="{% static 'base/todo-background.jpg' %}" class="todo-bg" alt="" /> -->
+  <!-- <img src="{% static 'todo-background.jpg' %}" class="todo-bg" alt="" /> -->
   <!-- {% endif %} -->
 
   <body>
