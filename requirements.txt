@@ -10,5 +10,4 @@ pydantic==2.4.2 ; python_version >= '3.7'
 pydantic-core==2.10.1 ; python_version >= '3.7'
 soupsieve==2.5 ; python_version >= '3.8'
 sqlparse==0.4.4 ; python_version >= '3.5'
-tkinter
 typing-extensions==4.8.0 ; python_version >= '3.8'
