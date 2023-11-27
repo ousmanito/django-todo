@@ -3,11 +3,6 @@
 A basic interface that simulates a TodoList experience, using Python and Django.
 The goal is to have a registration system that shows private content only to those who are authenticated, and there is also some task management options : create, read, update and delete.
 
-
-### Links
-
-- Project URL: https://django-toudouliste.herokuapp.com/
-
 ## Screenshots
  ![Capture d’écran du 2023-10-18 01-15-56](https://github.com/ousmanito/encore-une-todo/assets/96242923/7a67776f-9b8b-43fb-9d63-97a584848cd2)
 ![Capture d’écran du 2023-10-18 01-16-05](https://github.com/ousmanito/encore-une-todo/assets/96242923/16bad08d-6ad0-488f-9d51-81981175b0ef)
